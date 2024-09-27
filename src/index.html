@@ -3,11 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/model_railroad_designer.js"></script>
+
     <title>Model Railroad Designer</title>
 </head>
 <body>
-    <div name="top-bar"></div>
-    <div name="side-bar"></div>
-    <main name="main-content"></main>
+    <div name="top-bar">
+        <span class="button" name="canvas-settings-button">canvas settings</span>
+    </div>
+
+    <div name="main-container">
+        <div name="side-bar">sidebar</div>
+        <main name="main-content">
+            <svg
+                width="100%"
+                height="100%"
+                preserveAspectRatio="xMinYMin"
+                data-mrd-ui-element="main-svg"
+            >
+                <defs data-mrd-ui-element="object-definition-container">
+                    <!-- try to center everything at 0,0 -->
+                    <rect id="base-sleeper-1" x="-2.5" y="-10" width="5" height="20" />
+                </defs>
+
+                <g data-mrd-ui-element="main-canvas" transform="translate(0, 0) scale(1)">
+                    <g data-id="canvas-background" fill="#CACACA">
+                        <rect x="0" y="0" width="200" height="100" />
+                    </g>
+
+                    <text>CIAOCIAOCIAO</text>
+                </g>
+            </svg>
+            <div class="coords-container" data-mrd-ui-element="coords-container">
+                <span>x:</span><span class="text-pull-right" data-mrd-ui-element="x-coord">0</span>
+                <span>y:</span><span class="text-pull-right" data-mrd-ui-element="y-coord">0</span>
+                <span>zoom:</span><span class="text-pull-right" data-mrd-ui-element="zoom-value">1</span>
+            </div>
+        </main>
+    </div>
 </body>
 </html>

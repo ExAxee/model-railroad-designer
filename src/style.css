@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+}
+
+div[name="top-bar"] {
+    padding: 10px;
+
+    height: 5vh;
+    width: 100%;
+
+    border-bottom: 1px solid #C2C2C2;
+}
+
+div[name="side-bar"] {
+    padding: 10px;
+
+    border-right: 1px solid #C2C2C2;
+}
+
+div[name="main-container"] {
+    height: 95vh;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 15vw 85vw;
+}
+
+main[name="main-content"] {
+    position: relative;
+    user-select: none;
+}
+
+main[name="main-content"] > svg {
+    display: block;
+    background-color: #F5F5F5;
+
+    cursor: url("media/cursor.png") 16 16, crosshair;
+    overflow: auto;
+}
+
+
+.coords-container {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+
+    /* width: 75px; */
+    padding: 5px 10px;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(35px, 1fr));
+    gap: 5px 15px;
+
+    border: 1px solid #C2C2C2;
+    border-radius: 5px;
+
+    background-color: #FFFFFF;
+}
+
+
+/*#################
+# GENERAL STYLING #
+#################*/
+
+.row {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.column {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.expanded {
+    justify-content: space-between;
+}
+
+.pull-left {
+    justify-self: start;
+}
+
+.pull-right {
+    justify-content: end;
+}
+
+.text-pull-right {
+    text-align: end;
+}
+
+
+/*#########################
+# FLOATING WINDOW STYLING #
+#########################*/
+
+.floating-window {
+    position: absolute;
+
+    background-color: #FFFFFF;
+
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.floating-window .floating-window-title-bar {
+    user-select: none;
+}
+
+.floating-window .floating-window-title-bar,
+.floating-window .floating-window-content,
+.floating-window .floating-window-controls {
+    padding: 15px;
+}
+
+.floating-window.floating-window-moving {
+    cursor: move;
+}
